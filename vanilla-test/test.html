@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <title></title>
+  <script src="cryptojs/sha256.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+      var sha256 = CryptoJS.algo.SHA256.create();
+      sha256.reset();
+      var hash = sha256._hash;
+
+      var time1 = Date.now();
+      for(var i = 0; i < 0x5fffff; i++) {
+        sha256.reset();
+        var hash = sha256.finalize(hash);
+      }
+      var diff = Date.now() - time1;
+      console.log("Diff: ", diff);
+      console.log(hash.toString());
+  </script>
+
+</head>
+<body>
+  <h1>SHA2 ASM.js test</h1>
+</body>
+</html>

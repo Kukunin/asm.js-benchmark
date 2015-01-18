@@ -1,0 +1,10 @@
+Result hash is 5eca0739c21c4bdfef5db791abb2b78aac2fa5396ed741372c14826928b260e9
+
+gcc:                 2768 ms
+clang:               2670 ms
+node:                9386 ms
+node (vanilla):     96507 ms
+chromium:            7815 ms
+chromium (vanilla): 27438 ms
+firefox:             5091 ms
+firefox (vanilla):  24694 ms

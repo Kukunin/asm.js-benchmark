@@ -9,6 +9,8 @@ Result hash should be `5eca0739c21c4bdfef5db791abb2b78aac2fa5396ed741372c1482692
 
 Time is primary value of this benchmark. The lower is better.
 
+Tests were made on the Core i3 550 CPU and Archlinux.
+
 ## Vanilla JS test
 
 [CryptoJS](http://code.google.com/p/crypto-js/) uses for SHA-256 implementation on Javascript. Test code is:
@@ -58,3 +60,16 @@ Specially for Node.js, two files concat to one:
     cd asm.js-test
     emcc sha2.c -O3 --closure 1 --memory-init-file 0 -s ASM_JS=1 -o sha2.asm.js
     for i in {1..5}; do sudo chrt -f 99 node sha2.asm.js; done
+
+# Results
+
+|Name    |Test   |Time, ms|
+|------- |-------|--------|
+|GCC     |Native |2768    |
+|Clang   |Native |2670    |
+|Node.js |ASM.js |9386    |
+|Node.js |Vanilla|96507   |
+|Chromium|ASM.js |7815    |
+|Chromium|Vanilla|27438   |
+|Firefox |ASM.js |5091    |
+|Firefox |Vanilla|24694   |

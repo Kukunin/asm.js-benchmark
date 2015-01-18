@@ -73,3 +73,5 @@ Specially for Node.js, two files concat to one:
 |Chromium|Vanilla|27438   |
 |Firefox |ASM.js |5091    |
 |Firefox |Vanilla|24694   |
+|IE11    |ASM.js |59587   |
+|IE11    |Vanilla|77060   |
